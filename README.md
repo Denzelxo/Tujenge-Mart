@@ -60,7 +60,8 @@ TujengeMart is a modern e-commerce platform dedicated to showcasing and promotin
 
 4. Open your browser and visit:
    ```
-  https://tujenge-mart.vercel.app/
+   https://tujenge-mart.vercel.app/
+
    ```
 
 ## 📱 Features in Detail
