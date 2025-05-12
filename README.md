@@ -45,7 +45,7 @@ TujengeMart is a modern e-commerce platform dedicated to showcasing and promotin
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/tujengemart.git
+   git clone https://github.com/Denzelxo/tujengemart.git
    ```
 
 2. Navigate to the project directory:
@@ -55,12 +55,12 @@ TujengeMart is a modern e-commerce platform dedicated to showcasing and promotin
 
 3. Start the local development server:
    ```bash
-   python -m http.server 8000
+   https://tujenge-mart.vercel.app/
    ```
 
 4. Open your browser and visit:
    ```
-   http://localhost:8000
+  https://tujenge-mart.vercel.app/
    ```
 
 ## 📱 Features in Detail
@@ -73,7 +73,7 @@ TujengeMart is a modern e-commerce platform dedicated to showcasing and promotin
 
 ### User Interface
 - Responsive navigation
-- Theme customization
+- Theme customisation
 - Interactive product cards
 - Smooth animations
 
@@ -107,14 +107,14 @@ TujengeMart's design focuses on:
 
 ## 📈 Performance Optimization
 
-- Optimized images
+- Optimised images
 - Minified CSS/JS
 - Lazy loading
 - Efficient caching
 
 ## 🤝 Contributing
 
-We welcome contributions! Please read our contributing guidelines before submitting pull requests.
+We welcome contributions! Please read our contributing guidelines before you submit pull requests.
 
 ## 📄 License
 
