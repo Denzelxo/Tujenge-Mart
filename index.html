@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="description" content="Your one-stop shop for authentic Kenyan products">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>TujengeMart - Authentic Kenyan Products</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+                <h1>TujengeMart</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="voice-search" onclick="chatbotAssistant.startListening()">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                <a href="#" class="cart-icon" onclick="toggleCart()"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a href="#" class="user-icon" onclick="toggleLogin()"><i class="fas fa-user"></i></a>
+                <button class="language-toggle" onclick="chatbotAssistant.toggleLanguage()">
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="background-image: url('landscape2.jpg');">
+            <div class="hero-content">
+                <h2>Discover Authentic Kenyan Products</h2>
+                <p>From traditional crafts to modern innovations, find the best of Kenya</p>
+                <div class="hero-buttons">
+                    <a href="products.html" class="cta-button">Shop Now</a>
+                    <button class="vendor-button" onclick="window.location.href='vendor-signup.html'">
+                        Become a Vendor
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-categories">
+            <h2>Popular Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="showCategoryProducts('traditional-crafts')">
+                    <img src="craft1.jpg" alt="Traditional Crafts">
+                    <h3>Traditional Crafts</h3>
+                </div>
+                <div class="category-card" onclick="showCategoryProducts('coffee-tea')">
+                    <img src="tea2.jpg" alt="Coffee & Tea">
+                    <h3>Coffee & Tea</h3>
+                </div>
+                <div class="category-card" onclick="showCategoryProducts('fashion')">
+                    <img src="fashion3.jpg" alt="Fashion">
+                    <h3>Fashion</h3>
+                </div>
+                <div class="category-card" onclick="showCategoryProducts('art')">
+                    <img src="art5.jpg" alt="Art">
+                    <h3>Art</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-section" id="categoryProducts" style="display: none;">
+            <div class="category-header">
+                <h2 id="categoryTitle">Category Products</h2>
+                <div class="category-filters">
+                    <button class="filter-button active" data-filter="all">All</button>
+                    <button class="filter-button" data-filter="price-low">Price: Low to High</button>
+                    <button class="filter-button" data-filter="price-high">Price: High to Low</button>
+                    <button class="filter-button" data-filter="newest">Newest</button>
+                </div>
+            </div>
+            <div class="product-grid" id="categoryProductGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section class="jua-kali-section">
+            <h2>Featured Jua Kali Artisans</h2>
+            <img src="metal work.jpg" alt="metal work" class="jua-kali-image">
+            <img src="metal work2.jpg" alt="metal work" class="jua-kali-image">
+
+            <div class="artisan-grid">
+                <!-- Artisan cards will be dynamically loaded via JavaScript -->
+            </div>
+        </section>
+
+        <section class="why-choose-us">
+            <h2>Why Choose TujengeMart?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-truck"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Nationwide shipping within 2-3 business days</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure Shopping</h3>
+                    <p>100% secure payment processing</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-undo"></i>
+                    <h3>Easy Returns</h3>
+                    <p>30-day return policy</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Always here to help you</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="payment-methods">
+            <h2>Payment Methods</h2>
+            <div class="payment-grid">
+                <div class="payment-method">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/M-PESA_LOGO-01.svg/1200px-M-PESA_LOGO-01.svg.png" alt="M-Pesa">
+                    <h3>M-Pesa</h3>
+                    <p>Pay using M-Pesa</p>
+                </div>
+                <div class="payment-method">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png" alt="Visa">
+                    <h3>Card Payment</h3>
+                    <p>Visa, Mastercard, and more</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button onclick="toggleCart()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total">
+            <h3>Total: <span id="cartTotal">KES 0</span></h3>
+            <button class="checkout-button" onclick="proceedToCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+            <p style="text-align: center; margin-top: 1rem;">
+                Don't have an account? <a href="#" onclick="toggleSignup()">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-toggle" onclick="toggleChatbot()">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3>AI Assistant</h3>
+                <button onclick="toggleChatbot()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="bot-message">
+                    Hello! I'm your TujengeMart assistant. How can I help you today?
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your message...">
+                <button onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Loading Spinner -->
+    <div class="spinner" id="spinner"></div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About TujengeMart</h3>
+                <p>Your one-stop shop for authentic Kenyan products, supporting local artisans and businesses.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@tujengemart.com</p>
+                <p>Phone: +254 705 815 344</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TujengeMart. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+    <script src="main.js"></script>
+    <script src="category.js"></script>
+    <script src="auth.js"></script>
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script src="ai-assistant.js"></script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+
+        // Chatbot functionality
+        function toggleChatbot() {
+            const chatbotWindow = document.getElementById('chatbotWindow');
+            chatbotWindow.classList.toggle('active');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatbotInput');
+            const message = input.value.trim();
+            
+            if (message) {
+                addMessage('user', message);
+                input.value = '';
+                
+                // Process message with AI
+                chatbotAssistant.processVoiceCommand(message)
+                    .then(response => {
+                        addMessage('bot', response);
+                    });
+            }
+        }
+
+        function addMessage(sender, text) {
+            const messagesContainer = document.getElementById('chatbotMessages');
+            const messageElement = document.createElement('div');
+            messageElement.className = `message ${sender}-message`;
+            messageElement.textContent = text;
+            messagesContainer.appendChild(messageElement);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load cart
+            cartManager.loadCart();
+            
+            // Display products
+            productManager.getProductsByCategory('featured')
+                .then(products => {
+                    const productGrid = document.querySelector('.product-grid');
+                    productGrid.innerHTML = products.map(product => `
+                        <div class="product-card">
+                            <img src="${product.image}" alt="${product.name}">
+                            <h3>${product.name}</h3>
+                            <p class="price">KES ${product.price.toLocaleString()}</p>
+                            <button onclick="cartManager.addToCart(${JSON.stringify(product)})" class="add-to-cart">
+                                Add to Cart
+                            </button>
+                        </div>
+                    `).join('');
+                });
+            
+            // Display Jua Kali artisans
+            const artisanGrid = document.querySelector('.artisan-grid');
+            artisanGrid.innerHTML = `
+                <div class="artisan-card">
+                    <img src="kamau.jpg" alt="Artisan">
+                    <h3>John Kamau</h3>
+                    <p>Wood Carving Specialist</p>
+                </div>
+                <div class="artisan-card">
+                    <img src="mary.jpg" alt="Artisan">
+                    <h3>Mary Wanjiku</h3>
+                    <p>Beadwork Artist</p>
+                </div>
+                <div class="artisan-card">
+                    <img src="ochieng2.jpg" alt="Artisan">
+                    <h3>Peter Ochieng</h3>
+                    <p>Metal Work Expert</p>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html> 

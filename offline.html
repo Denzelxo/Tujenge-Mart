@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline - TujengeMart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .offline-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .offline-icon {
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .offline-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .offline-message {
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+
+        .retry-button {
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .retry-button:hover {
+            background-color: #ff5252;
+        }
+
+        .offline-features {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+        }
+
+        .feature {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .feature i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="offline-container">
+        <i class="fas fa-wifi-slash offline-icon"></i>
+        <h1 class="offline-title">You're Offline</h1>
+        <p class="offline-message">Don't worry! You can still browse previously loaded products and place orders that will sync when you're back online.</p>
+        
+        <button class="retry-button" onclick="window.location.reload()">
+            <i class="fas fa-sync-alt"></i> Try Again
+        </button>
+
+        <div class="offline-features">
+            <div class="feature">
+                <i class="fas fa-shopping-cart"></i>
+                <h3>Offline Shopping</h3>
+                <p>Browse cached products and add them to your cart</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-clock"></i>
+                <h3>Order Queue</h3>
+                <p>Place orders that will sync when you're back online</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-history"></i>
+                <h3>Recent Items</h3>
+                <p>Access your recently viewed products</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Check online status
+        window.addEventListener('online', () => {
+            window.location.reload();
+        });
+    </script>
+</body>
+</html> 
